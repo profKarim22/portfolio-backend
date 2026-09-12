@@ -7,6 +7,7 @@ import { errorHandler, notFound } from './middleware/errorHandler';
 // Import routes
 import publicRoutes from './routes/publicRoutes';
 import adminRoutes from './routes/adminRoutes';
+import authRoutes from './routes/authRoutes';
 
 const app = express();
 
@@ -34,6 +35,7 @@ app.get('/api/health', (req, res) => {
 
 // Routes
 app.use('/api/v1', publicRoutes);
+app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/admin', adminRoutes);
 
 // Error Handling
