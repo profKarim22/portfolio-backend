@@ -37,14 +37,7 @@ app.use('/api/', apiLimiter);
 
 // Health Check
 app.get('/api/health', (req, res) => {
-  const env = {
-    MONGODB_URI: !!process.env.MONGODB_URI,
-    JWT_SECRET: !!process.env.JWT_SECRET,
-    FRONTEND_URL: !!process.env.FRONTEND_URL,
-    ADMIN_EMAIL: !!process.env.ADMIN_EMAIL,
-    ADMIN_PASSWORD: !!process.env.ADMIN_PASSWORD
-  };
-  res.status(200).json({ success: true, status: 'ok', env });
+  res.status(200).json({ success: true, status: 'ok' });
 });
 
 // Routes
