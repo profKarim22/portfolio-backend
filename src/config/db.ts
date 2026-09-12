@@ -1,18 +1,18 @@
 import mongoose from 'mongoose';
 
-let isConnected = false;
-
 export const connectDB = async () => {
-  if (isConnected) {
+  if (mongoose.connection.readyState >= 1) {
     console.log('MongoDB already connected');
     return;
   }
+  
   try {
     const conn = await mongoose.connect(process.env.MONGODB_URI as string);
-    isConnected = true;
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
-    console.error(`Error: ${(error as Error).message}`);
-    process.exit(1);
+    console.error(`Error connecting to MongoDB: ${(error as Error).message}`);
+    // In serverless, we might not want to kill the process immediately, but throw the error
+    // to let the request fail gracefully instead of crashing the whole container.
+    throw error;
   }
 };

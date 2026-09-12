@@ -1,0 +1,500 @@
+{
+  "admins": [
+    {
+      "_id": "6aa57c7a529be77914a6af5d",
+      "email": "admin@example.com",
+      "passwordHash": "$2b$10$TQ0soC1XVi6u6EOBmtU1M.R/bmy/8kxgt1NGUSfX7kZxc6TLAlZFO",
+      "createdAt": "2026-09-12T16:23:22.843Z",
+      "updatedAt": "2026-09-12T16:23:22.843Z",
+      "__v": 0
+    }
+  ],
+  "projects": [
+    {
+      "_id": "6aa57c7a558e816b485463e5",
+      "id": "algorithmic-storytelling",
+      "__v": 0,
+      "badge": "Creative Engineering",
+      "createdAt": "2026-09-12T16:23:22.855Z",
+      "description": "A high-performance, framework-free interactive web experience engineered with pure Vanilla JavaScript. Features high-framerate HTML5 Canvas simulations, mathematically uniform parametric heart geometry, an autoplay-resilient dual-tier audio engine (HTML5 Audio + Web Audio API procedural synthesizer), and a custom Python PIL asset optimization pipeline.",
+      "domain": "Canvas 2D & DSP Audio",
+      "domainColor": "#e63946",
+      "featured": true,
+      "figmaLink": null,
+      "figmaUrl": "",
+      "github": "https://github.com/profKarim22/FINAL-PROJECT",
+      "githubUrl": "https://github.com/profKarim22/FINAL-PROJECT",
+      "highlights": [
+        "Real-time Matrix Digital Rain Canvas Simulation",
+        "Parametric Heart Curve with Arc-Length Parameterization",
+        "Dual-Tier Audio Engine (HTML5 Media + Web Audio Synthesizer)",
+        "Hardware-Accelerated 3D Envelope & Polaroid Transitions",
+        "Automated Python Batch Image Optimizer with EXIF Transpose"
+      ],
+      "isFeatured": true,
+      "liveDemo": "https://profkarim22.github.io/FINAL-PROJECT/",
+      "liveUrl": "https://profkarim22.github.io/FINAL-PROJECT/",
+      "metrics": [
+        {
+          "label": "Runtime Performance",
+          "value": "60-120 FPS Locked",
+          "_id": "6aa57c7a529be77914a6af5e"
+        },
+        {
+          "label": "Framework Overhead",
+          "value": "0 KB (Pure Vanilla)",
+          "_id": "6aa57c7a529be77914a6af5f"
+        },
+        {
+          "label": "Asset Compression",
+          "value": "75% WebP Reduction",
+          "_id": "6aa57c7a529be77914a6af60"
+        }
+      ],
+      "order": 2,
+      "tech": [
+        "JavaScript (ES6+)",
+        "HTML5 Canvas 2D",
+        "Web Audio API",
+        "CSS3 3D Transforms",
+        "Python (Pillow)",
+        "Algorithmic Math"
+      ],
+      "techStack": [
+        "JavaScript (ES6+)",
+        "HTML5 Canvas 2D",
+        "Web Audio API",
+        "CSS3 3D Transforms",
+        "Python (Pillow)",
+        "Algorithmic Math"
+      ],
+      "title": "Algorithmic Storytelling & Web Audio Experience",
+      "updatedAt": "2026-09-12T16:53:32.953Z"
+    },
+    {
+      "_id": "6aa57c7a558e816b485463e6",
+      "id": "event-system",
+      "__v": 0,
+      "badge": "Featured Project",
+      "createdAt": "2026-09-12T16:23:22.893Z",
+      "description": "An AI-powered event management and recommendation platform featuring intelligent event recommendations, event discovery, intelligent search, digital ticketing, real-time communication, and B2B event services.",
+      "domain": "AI & Event Platform",
+      "domainColor": "#38bdf8",
+      "featured": false,
+      "figmaLink": null,
+      "figmaUrl": null,
+      "github": "https://github.com/profKarim22/AI-Event-Management-Recommendation-System",
+      "highlights": [
+        "AI-driven event discovery & personalized recommendation pipeline",
+        "Digital ticketing with secure verification & attendee management",
+        "Real-time communication & live notifications powered by Socket.IO",
+        "Comprehensive B2B event dashboard & services"
+      ],
+      "isFeatured": true,
+      "liveDemo": "https://lightgreen-albatross-650223.hostingersite.com/",
+      "metrics": [
+        {
+          "label": "Backend",
+          "value": "Node.js + Express.js",
+          "_id": "6aa57c7a529be77914a6af64"
+        },
+        {
+          "label": "Database",
+          "value": "MySQL + Prisma ORM",
+          "_id": "6aa57c7a529be77914a6af65"
+        },
+        {
+          "label": "Real-Time",
+          "value": "Socket.IO",
+          "_id": "6aa57c7a529be77914a6af66"
+        }
+      ],
+      "order": 1,
+      "tech": [
+        "Node.js",
+        "TypeScript",
+        "Express.js",
+        "MySQL",
+        "Prisma ORM",
+        "Python",
+        "FastAPI",
+        "Machine Learning",
+        "NLP",
+        "Socket.IO",
+        "REST API"
+      ],
+      "techStack": [],
+      "title": "AI Event Management & Recommendation System",
+      "updatedAt": "2026-09-12T16:53:32.953Z"
+    },
+    {
+      "_id": "6aa57c7a558e816b485463e7",
+      "id": "portfolio-site",
+      "__v": 0,
+      "badge": "Production Web",
+      "createdAt": "2026-09-12T16:23:22.903Z",
+      "description": "A modern developer portfolio website showcasing engineering projects, interactive 3D physics badge, structured technical skill architecture, and interactive API console.",
+      "domain": "Interactive Frontend & 3D",
+      "domainColor": "#818cf8",
+      "featured": false,
+      "figmaLink": null,
+      "figmaUrl": null,
+      "github": "https://github.com/profKarim22/portfolio",
+      "highlights": [
+        "Interactive 3D ID badge with Rapier physics & React Three Fiber",
+        "Interactive mock REST API console simulating production endpoints",
+        "Fully responsive glassmorphism UI with custom CSS variables design system",
+        "Fast Vite build system with optimized asset delivery"
+      ],
+      "isFeatured": false,
+      "liveDemo": "https://profkarim22.github.io/portfolio/",
+      "metrics": [
+        {
+          "label": "Framerate",
+          "value": "60 FPS WebGL",
+          "_id": "6aa57c7a529be77914a6af6a"
+        },
+        {
+          "label": "Core Web Vitals",
+          "value": "100%",
+          "_id": "6aa57c7a529be77914a6af6b"
+        },
+        {
+          "label": "LCP Load",
+          "value": "<0.8s",
+          "_id": "6aa57c7a529be77914a6af6c"
+        }
+      ],
+      "order": 0,
+      "tech": [
+        "React.js",
+        "Three.js",
+        "React Three Fiber",
+        "Rapier Physics",
+        "JavaScript",
+        "CSS3",
+        "Vite"
+      ],
+      "techStack": [],
+      "title": "Personal Portfolio",
+      "updatedAt": "2026-09-12T16:53:32.953Z"
+    },
+    {
+      "_id": "6aa57c7a558e816b485463e8",
+      "id": "user-greeting",
+      "__v": 0,
+      "badge": "UI/UX & Frontend",
+      "createdAt": "2026-09-12T16:23:22.912Z",
+      "description": "A component system and user greeting interface built directly from custom Figma specifications into a modern, accessible React and TypeScript component suite.",
+      "domain": "Design System & Frontend",
+      "domainColor": "#10b981",
+      "featured": false,
+      "figmaLink": "https://www.figma.com/design/JtPirzr9plI6jisE6a04vK/User-Greeting--Copy-",
+      "figmaUrl": null,
+      "github": "https://github.com/profKarim22/Usergreetingcopy",
+      "highlights": [
+        "Direct translation of Figma design specifications into React components",
+        "Accessible UI primitives built on Radix UI component library",
+        "Type-safe component architecture with TypeScript",
+        "Modular, responsive dashboard widget structure"
+      ],
+      "isFeatured": false,
+      "liveDemo": null,
+      "metrics": [
+        {
+          "label": "Accessibility",
+          "value": "100% WCAG AA",
+          "_id": "6aa57c7a529be77914a6af70"
+        },
+        {
+          "label": "Type Safety",
+          "value": "Strict TS",
+          "_id": "6aa57c7a529be77914a6af71"
+        },
+        {
+          "label": "Runtime CSS",
+          "value": "0 Overhead",
+          "_id": "6aa57c7a529be77914a6af72"
+        }
+      ],
+      "order": 3,
+      "tech": [
+        "UI/UX Design",
+        "Figma",
+        "React.js",
+        "TypeScript",
+        "Radix UI",
+        "Vite"
+      ],
+      "techStack": [],
+      "title": "User Greeting & UI Component System",
+      "updatedAt": "2026-09-12T16:23:22.912Z"
+    },
+    {
+      "_id": "6aa5a6be558e816b485463ed",
+      "id": "portfolio-backend",
+      "__v": 0,
+      "badge": "API",
+      "createdAt": "2026-09-12T19:23:42.801Z",
+      "description": "A production-ready Node.js REST API serving portfolio data.",
+      "domain": "Backend",
+      "domainColor": "#4ade80",
+      "featured": true,
+      "figmaLink": null,
+      "figmaUrl": null,
+      "github": "https://github.com/profKarim22/portfolio-backend",
+      "githubUrl": "https://github.com/profKarim22/portfolio-backend",
+      "highlights": [
+        "TypeScript",
+        "MongoDB",
+        "Express"
+      ],
+      "isFeatured": true,
+      "liveDemo": "https://api.karim.com",
+      "liveUrl": "https://api.karim.com",
+      "metrics": [
+        {
+          "label": "Uptime",
+          "value": "99.9%",
+          "_id": "6aa5a6bef71a5fc24ec67b8c"
+        }
+      ],
+      "order": 0,
+      "tech": [
+        "Node.js",
+        "Express",
+        "TypeScript"
+      ],
+      "techStack": [
+        "MongoDB",
+        "Mongoose",
+        "JWT"
+      ],
+      "title": "Portfolio Backend",
+      "updatedAt": "2026-09-12T19:23:42.801Z"
+    }
+  ],
+  "profiles": [
+    {
+      "_id": "6aa57c7a529be77914a6af76",
+      "name": "Karim Abbas Elashiry",
+      "title": "Backend Developer & Computer Science Senior",
+      "education": {
+        "institute": "Higher Institute of Computer Science and Information Systems (HICIS)",
+        "location": "6th of October City, Egypt",
+        "level": "Level 04 (Senior Year)",
+        "major": "Computer Science"
+      },
+      "primary_focus": "Backend Engineering, API Design & Scalable Systems",
+      "technical_core": {
+        "backend": [
+          "Node.js",
+          "Express.js",
+          "TypeScript",
+          "RESTful APIs",
+          "JWT & Authentication"
+        ],
+        "databases": [
+          "SQL",
+          "NoSQL",
+          "MySQL",
+          "MongoDB",
+          "Mongoose"
+        ],
+        "systems_foundation": [
+          "C++",
+          "Object-Oriented Programming",
+          "Data Structures",
+          "Algorithms & Problem Solving"
+        ],
+        "exploratory": [
+          "Redis",
+          "Computer Vision Fundamentals",
+          "Modern UI Essentials",
+          "Flutter"
+        ]
+      },
+      "status": "Open for Backend Engineering Roles & Internships",
+      "createdAt": "2026-09-12T16:23:22.937Z",
+      "updatedAt": "2026-09-12T16:23:22.937Z",
+      "__v": 0
+    }
+  ],
+  "skills": [
+    {
+      "_id": "6aa57c7a529be77914a6af77",
+      "primary_domain_backend": [
+        "Node.js",
+        "Express.js",
+        "TypeScript",
+        "JavaScript (ES6+)",
+        "MySQL",
+        "MongoDB",
+        "SQL",
+        "NoSQL",
+        "RESTful APIs",
+        "JWT & Authentication"
+      ],
+      "backend_tools_and_data": [
+        "Mongoose",
+        "Postman"
+      ],
+      "foundations_and_algorithms": [
+        "C++",
+        "Object-Oriented Programming (OOP)",
+        "Data Structures",
+        "Algorithms & Problem Solving"
+      ],
+      "applied_and_exploratory": [
+        "Redis",
+        "Computer Vision Basics (Image Processing & Pattern Detection)",
+        "Client-Side Foundations (HTML5, CSS3, React Basics, Flutter)"
+      ],
+      "createdAt": "2026-09-12T16:23:22.949Z",
+      "updatedAt": "2026-09-12T16:23:22.949Z",
+      "__v": 0
+    }
+  ],
+  "status": [
+    {
+      "_id": "6aa57c7a529be77914a6af78",
+      "mode": "committed",
+      "modes": {
+        "available": {
+          "label": "Open for Opportunities",
+          "color": "#10b981",
+          "borderColor": "rgba(16, 185, 129, 0.25)",
+          "bgColor": "rgba(16, 185, 129, 0.06)"
+        },
+        "committed": {
+          "label": "Committed to Contract",
+          "color": "#f59e0b",
+          "borderColor": "rgba(245, 158, 11, 0.25)",
+          "bgColor": "rgba(245, 158, 11, 0.06)"
+        },
+        "offgrid": {
+          "label": "Off-Grid // Deep Architecture",
+          "color": "#f43f5e",
+          "borderColor": "rgba(244, 63, 94, 0.25)",
+          "bgColor": "rgba(244, 63, 94, 0.06)"
+        }
+      },
+      "createdAt": "2026-09-12T16:23:22.958Z",
+      "updatedAt": "2026-09-12T16:54:51.002Z",
+      "__v": 0
+    }
+  ],
+  "apiEndpoints": [
+    {
+      "_id": "6aa57c7a558e816b485463e9",
+      "key": "profile",
+      "__v": 0,
+      "createdAt": "2026-09-12T16:23:22.962Z",
+      "data": {
+        "name": "Karim",
+        "title": "Software Engineer",
+        "education": {
+          "institute": "University",
+          "location": "City, Country",
+          "level": "BSc",
+          "major": "Computer Science"
+        },
+        "primary_focus": "Backend Engineering",
+        "technical_core": {
+          "backend": [
+            "Node.js",
+            "Express",
+            "Python"
+          ],
+          "databases": [
+            "MongoDB",
+            "PostgreSQL"
+          ],
+          "systems_foundation": [
+            "Linux",
+            "Docker"
+          ],
+          "exploratory": [
+            "Go",
+            "Rust"
+          ]
+        },
+        "status": "Available for new projects"
+      },
+      "updatedAt": "2026-09-12T19:23:42.869Z"
+    },
+    {
+      "_id": "6aa57c7a558e816b485463ea",
+      "key": "skills",
+      "__v": 0,
+      "createdAt": "2026-09-12T16:23:22.969Z",
+      "data": {
+        "primary_domain_backend": [
+          "Node.js",
+          "TypeScript",
+          "Express"
+        ],
+        "backend_tools_and_data": [
+          "MongoDB",
+          "PostgreSQL",
+          "Redis"
+        ],
+        "foundations_and_algorithms": [
+          "Data Structures",
+          "System Design"
+        ],
+        "applied_and_exploratory": [
+          "Docker",
+          "AWS",
+          "CI/CD"
+        ]
+      },
+      "updatedAt": "2026-09-12T19:23:42.875Z"
+    },
+    {
+      "_id": "6aa57c7a558e816b485463eb",
+      "key": "projects",
+      "__v": 0,
+      "createdAt": "2026-09-12T16:23:22.974Z",
+      "data": [
+        {
+          "name": "AI Event Management & Recommendation System",
+          "stack": "Node.js + Express.js + TypeScript",
+          "database": "MySQL + Prisma ORM",
+          "features": "AI Recommendations, Real-Time Chat, Digital Ticketing"
+        },
+        {
+          "name": "Algorithmic Storytelling & Web Audio Experience",
+          "stack": "Vanilla JavaScript + HTML5 Canvas",
+          "engine": "Web Audio API + Procedural Synthesizer",
+          "features": "Matrix Rain Simulation, Parametric Geometry, Image Optimization"
+        },
+        {
+          "name": "Personal Portfolio",
+          "stack": "React.js + Three.js + Vite",
+          "features": "3D Interactive Badge, Live API Console, Glassmorphism UI"
+        },
+        {
+          "name": "User Greeting & UI Component System",
+          "stack": "React.js + TypeScript + Radix UI",
+          "design": "Figma Specifications",
+          "features": "Accessible Components, Type-Safe Architecture"
+        }
+      ],
+      "updatedAt": "2026-09-12T16:23:22.974Z"
+    },
+    {
+      "_id": "6aa57c7a558e816b485463ec",
+      "key": "status",
+      "__v": 0,
+      "createdAt": "2026-09-12T16:23:22.977Z",
+      "data": {
+        "portfolio": "Online",
+        "api_console": "Interactive",
+        "data_format": "JSON",
+        "availability": "Public"
+      },
+      "updatedAt": "2026-09-12T16:23:22.977Z"
+    }
+  ]
+}
