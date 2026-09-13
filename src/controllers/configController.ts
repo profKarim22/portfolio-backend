@@ -3,10 +3,17 @@ import Profile from '../models/Profile';
 import Skill from '../models/Skill';
 import Status from '../models/Status';
 import ApiEndpoint from '../models/ApiEndpoint';
+import { defaultData } from '../data/seedData';
 
 export const getProfile = async (req: Request, res: Response) => {
   try {
-    const profile = await Profile.findOne();
+    let profile = await Profile.findOne();
+    if (!profile) {
+      const endpoint = await ApiEndpoint.findOne({ key: 'profile' });
+      if (endpoint?.data) {
+        return res.json({ success: true, data: endpoint.data });
+      }
+    }
     res.json({ success: true, data: profile });
   } catch (error) {
     res.status(500).json({ success: false, error: { message: (error as Error).message } });
@@ -15,7 +22,13 @@ export const getProfile = async (req: Request, res: Response) => {
 
 export const getSkills = async (req: Request, res: Response) => {
   try {
-    const skills = await Skill.findOne();
+    let skills = await Skill.findOne();
+    if (!skills) {
+      const endpoint = await ApiEndpoint.findOne({ key: 'skills' });
+      if (endpoint?.data) {
+        return res.json({ success: true, data: endpoint.data });
+      }
+    }
     res.json({ success: true, data: skills });
   } catch (error) {
     res.status(500).json({ success: false, error: { message: (error as Error).message } });
@@ -24,7 +37,13 @@ export const getSkills = async (req: Request, res: Response) => {
 
 export const getStatus = async (req: Request, res: Response) => {
   try {
-    const status = await Status.findOne();
+    let status = await Status.findOne();
+    if (!status) {
+      const endpoint = await ApiEndpoint.findOne({ key: 'status' });
+      if (endpoint?.data) {
+        return res.json({ success: true, data: endpoint.data });
+      }
+    }
     res.json({ success: true, data: status });
   } catch (error) {
     res.status(500).json({ success: false, error: { message: (error as Error).message } });
@@ -46,12 +65,50 @@ export const getApiEndpoint = async (req: Request, res: Response) => {
 
 export const updateStatus = async (req: Request, res: Response) => {
   try {
+    const rawBody = req.body;
+    let mode: string = 'available';
+    let modes: any = undefined;
+
+    if (typeof rawBody === 'string') {
+      mode = rawBody.trim();
+    } else if (rawBody && typeof rawBody === 'object') {
+      mode = rawBody.mode || rawBody.status || 'available';
+      if (rawBody.modes) {
+        modes = rawBody.modes;
+      }
+    }
+
     let status = await Status.findOne();
     if (status) {
-      status = await Status.findOneAndUpdate({}, req.body, { new: true });
+      status.mode = mode;
+      if (modes) {
+        status.modes = modes;
+      }
+      await status.save();
     } else {
-      status = await Status.create(req.body);
+      status = await Status.create({
+        mode,
+        modes: modes || defaultData.statusConfig.modes,
+      });
     }
+
+    // Synchronize with ApiEndpoint 'status'
+    try {
+      await ApiEndpoint.findOneAndUpdate(
+        { key: 'status' },
+        {
+          key: 'status',
+          data: {
+            portfolio: mode === 'offgrid' ? 'Off-Grid' : 'Online',
+            api_console: 'Interactive',
+            data_format: 'JSON',
+            availability: mode === 'available' ? 'Public' : mode === 'committed' ? 'Contracted' : 'Off-Grid',
+          },
+        },
+        { upsert: true }
+      );
+    } catch (_) {}
+
     res.json({ success: true, data: status });
   } catch (error) {
     res.status(400).json({ success: false, error: { message: (error as Error).message } });
@@ -66,8 +123,21 @@ export const updateApiEndpoint = async (req: Request, res: Response) => {
       { key, data: req.body },
       { new: true, upsert: true, runValidators: true }
     );
+
+    // Synchronize with specialized models if applicable
+    if (key === 'profile' && req.body && typeof req.body === 'object') {
+      try {
+        await Profile.findOneAndUpdate({}, req.body, { upsert: true, new: true });
+      } catch (_) {}
+    } else if (key === 'skills' && req.body && typeof req.body === 'object') {
+      try {
+        await Skill.findOneAndUpdate({}, req.body, { upsert: true, new: true });
+      } catch (_) {}
+    }
+
     res.json({ success: true, data: endpoint });
   } catch (error) {
     res.status(400).json({ success: false, error: { message: (error as Error).message } });
   }
 };
+

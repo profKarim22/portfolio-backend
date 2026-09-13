@@ -44,7 +44,7 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization'],
   optionsSuccessStatus: 200,
 }));
-app.use(express.json());
+app.use(express.json({ strict: false }));
 
 // Rate Limiting
 const apiLimiter = rateLimit({
