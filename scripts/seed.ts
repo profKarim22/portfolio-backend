@@ -20,7 +20,11 @@ const safeSeed = async () => {
   }
 
   try {
-    await mongoose.connect(process.env.MONGODB_URI as string);
+    const uri = process.env.MONGODB_URI || process.env.MONGO_URI;
+    if (!uri) {
+      throw new Error('MONGODB_URI is not defined in environment variables');
+    }
+    await mongoose.connect(uri);
     console.log('MongoDB Connected for Safe Seeding');
 
     // 1. Seed Admin
@@ -110,9 +114,11 @@ const safeSeed = async () => {
     }
 
     console.log('🎉 Safe Seeding process completed successfully!');
-    process.exit();
+    await mongoose.disconnect();
+    process.exit(0);
   } catch (error) {
     console.error('❌ Error during seeding:', error);
+    try { await mongoose.disconnect(); } catch (_) {}
     process.exit(1);
   }
 };
