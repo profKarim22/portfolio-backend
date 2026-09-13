@@ -28,15 +28,20 @@ const safeSeed = async () => {
     console.log('MongoDB Connected for Safe Seeding');
 
     // 1. Seed Admin
-    const adminEmail = process.env.ADMIN_EMAIL || 'admin@example.com';
+    const adminEmail = (process.env.ADMIN_EMAIL || 'admin@example.com').trim().toLowerCase();
     const adminPassword = process.env.ADMIN_PASSWORD || 'admin';
     const adminExists = await Admin.findOne({ email: adminEmail });
     if (!adminExists) {
       const salt = await bcrypt.genSalt(10);
       const passwordHash = await bcrypt.hash(adminPassword, salt);
-      await Admin.create({ email: adminEmail, passwordHash });
-      console.log('✅ Admin user created');
+      await Admin.create({ email: adminEmail, passwordHash, role: 'admin' });
+      console.log('✅ Admin user created with role: admin');
     } else {
+      // Ensure role is admin if missing
+      if (!adminExists.role) {
+        adminExists.role = 'admin';
+        await adminExists.save();
+      }
       console.log('⏭️  PRESERVED: Admin user already exists');
     }
 
